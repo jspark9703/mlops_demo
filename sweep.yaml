@@ -4,6 +4,8 @@ metric:
   goal: maximize
   name: metrics/mAP50-95(B)
 parameters:
+  model:
+    values: ["yolov8n.pt", "yolov8s.pt", "yolov8m.pt"]
   batch:
     values: [8, 16, 32]
   epochs:
@@ -18,3 +20,6 @@ parameters:
     distribution: uniform
     min: 0.0001
     max: 0.001
+  # 학습 중 이미지 로깅 주기 (매 N 배치마다)
+  log_img_every_n_batch:
+    values: [10, 20, 50]
